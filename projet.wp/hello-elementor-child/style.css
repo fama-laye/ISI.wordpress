@@ -1,0 +1,207 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+Template: hello-elementor
+Author: Elementor Team
+Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+Tags: accessibility-ready,flexible-header,custom-colors,custom-menu,custom-logo,featured-images,rtl-language-support,threaded-comments,translation-ready
+Version: 3.4.9.1781786116
+Updated: 2026-06-18 12:35:16
+*/
+
+/* Custom variables */
+:root {
+  --isi-primary: #1f4085;
+  --isi-gold: #ffba2d;
+  --isi-surface: #f7f9fb;
+}
+
+/* Material symbols utility */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  display: inline-block;
+}
+.star-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Navigation links animation */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #1f4085;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 64px rgba(31, 64, 133, 0.12);
+}
+
+/* Image zoom in card */
+.img-zoom-wrap {
+  overflow: hidden;
+}
+.img-zoom-wrap img {
+  transition: transform 0.55s ease;
+}
+.card-lift:hover .img-zoom-wrap img {
+  transform: scale(1.07);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Bouncing elements */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.bounce-slow {
+  animation: bounce-slow 1.8s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-1 { opacity: 0; animation: fadeInUp 0.7s 0.15s ease forwards; }
+.anim-2 { opacity: 0; animation: fadeInUp 0.7s 0.30s ease forwards; }
+.anim-3 { opacity: 0; animation: fadeInUp 0.7s 0.45s ease forwards; }
+.anim-4 { opacity: 0; animation: fadeInUp 0.7s 0.60s ease forwards; }
+.anim-5 { opacity: 0; animation: fadeInUp 0.7s 0.80s ease forwards; }
+
+/* Progress bar */
+.progress-bar {
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 11px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Specific page layouts */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1f4085;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 3px #1f4085;
+}
+
+.step-line::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: -20px;
+  width: 2px;
+  background: linear-gradient(to bottom, #1f4085, #dae2ff);
+}
+
+.filter-btn {
+  transition: all 0.2s;
+}
+.filter-btn.active {
+  background: #1f4085;
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: #1f4085;
+  color: #fff;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* FAQ dropdowns */
+.faq-item {
+  border-bottom: 1px solid #e2e8f0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+.faq-answer.open {
+  max-height: 300px;
+  padding-bottom: 16px;
+}
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+.faq-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a589e;
+  border-radius: 3px;
+}
+
+/* Focus inputs */
+input, select, textarea {
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #1f4085;
+  box-shadow: 0 0 0 3px rgba(31, 64, 133, 0.1);
+}
